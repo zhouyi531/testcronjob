@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "send-rpa-email":"node app",
+    "send-rpa-email": "node app",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -16,5 +16,10 @@
   "bugs": {
     "url": "https://github.com/zhouyi531/testcronjob/issues"
   },
-  "homepage": "https://github.com/zhouyi531/testcronjob#readme"
+  "homepage": "https://github.com/zhouyi531/testcronjob#readme",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "mailinator": "git+ssh://git@github.com/glg/mailinator.git",
+    "mustache": "^2.2.0"
+  }
 }

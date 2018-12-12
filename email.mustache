@@ -1,0 +1,124 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>GLG Referrals</title>
+  <style type="text/css">
+    body {
+      max-width:768px;
+      background-color:#FFF;
+      font-family: Helvetica,Arial,sans-serif;
+      color:#333;
+      font-size: 14px;
+      line-height: 14px;
+      padding:20px;
+    }
+    table {
+      border-collapse: collapse;
+    }
+    table td {
+      border-collapse: collapse;
+      padding: 8px;
+      border: 1px solid #ccc;
+    }
+    .label {
+      font-weight: bold;
+    }
+    span {
+      margin-left: 5px;
+    }
+  </style>
+</head>
+<body>
+  <p>
+    A new lead has been referred to GLG by <a href="https://services.glgresearch.com/advisors/#/cm/{{lead.sponsorCmId}}">{{{lead.sponsorName}}}</a>:
+  </p>
+  {{#lead.dnc}}
+  <p style="color: red">
+    This lead is existing council member that has beend DNC'd.
+  </p>
+  {{/lead.dnc}}
+  <table>
+    <tr>
+      <td class="label">
+        Name
+      </td>
+      <td>
+        <a href="https://services.glgresearch.com/advisors/#/cm/{{lead.councilMemberId}}">
+            {{{lead.name}}}
+          </a><span>ID: {{lead.councilMemberId}}</span>
+      </td>
+    </tr>
+    <tr>
+      <td class="label">
+        Company
+      </td>
+      <td>
+        {{{lead.company}}}
+      </td>
+    </tr>
+    <tr>
+      <td class="label">
+        Title
+      </td>
+      <td>
+        {{{lead.title}}}
+      </td>
+    </tr>
+    <tr>
+      <td class="label">
+        Email
+      </td>
+      <td>
+        {{{lead.email}}}
+      </td>
+    </tr>
+    <tr>
+      <td class="label">
+        Work Phone
+      </td>
+      <td>
+        {{{lead.workPhone}}}
+      </td>
+    </tr>
+    <tr>
+      <td class="label">
+        Mobile Phone
+      </td>
+      <td>
+        {{{lead.mobilePhone}}}
+      </td>
+    </tr>
+    <tr>
+      <td class="label">
+        Referrer Notes
+      </td>
+      <td>
+        {{{lead.comments}}}
+      </td>
+    </tr>
+    {{#lead.projectId}}
+    <tr>
+      <td class="label">
+        Project
+      </td>
+      <td>
+        {{^lead.dnc}}
+        <a href="https://services.glgresearch.com/streamliner/#/consultation/{{lead.projectId}}">
+            {{{lead.projectTitle}}}
+          </a><span>ID: {{lead.projectId}}</span>
+        {{/lead.dnc}}
+      </td>
+    </tr>
+    {{/lead.projectId}}
+    <tr>
+      <td class="label">
+        Source
+      </td>
+      <td>
+        {{{lead.importSource}}}
+      </td>
+    </tr>
+  </table>
+</body>
+</html>
